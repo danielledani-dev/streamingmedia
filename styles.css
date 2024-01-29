@@ -47,10 +47,20 @@ table {
 }
 html {
     background-color: #020659;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
     width: 375px;
     margin: 0 auto;
     background-color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header, footer{
+    width: 100%;
+    background-color: #2104D9;
+    color: white;
+}
+h1 {
+    text-align: center;
+    font-size: 1.25em;
+    text-transform: uppercase;
 }
