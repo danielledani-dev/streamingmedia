@@ -63,4 +63,159 @@ h1 {
     text-align: center;
     font-size: 1.25em;
     text-transform: uppercase;
+    display: grid;
+    position: absolute;
+    padding-top: 1em;
+    padding-left: 1.25em;
+}
+header p {
+    display: flex;
+    height: 110px;
+    margin-top: 3em;
+    align-items: center;
+    font-size: 1em;
+    padding: 25px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background-image: linear-gradient(to right,#2104D9, #030A8C, black);
+}
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+    z-index: 1;
+    top: -12.5em;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    }
+}
+li:first-child {
+    display: grid;
+    color: white;
+    position: absolute;
+    top: 1em;
+    padding-left: 135px;
+    padding-right: 106px;
+    padding-bottom: 12px;
+    margin-top: -15px;
+    padding-top: 15px;
+    background-color: #030A8C;
+    z-index: 0;
+}
+li:first-child a{
+    color: white;
+    text-decoration: none;
+    font-variant: small-caps;
+    font-size: 1.5em;
+}
+h2 {
+    position: relative;
+    color: #590242;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    top: -0.75em;
+    left: 2em;
+}
+.scroll {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.scroll section {
+    margin: 10px;
+    position: relative;
+}
+.scroll div {
+    position: absolute;
+    top: 251px;
+    background-color: rgba(255,255,255,.75);
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+#trending ::-webkit-scrollbar {
+    width: 15px;
+}
+#trending ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242;
+}
+#trending ::-webkit-scrollbar-thumb {
+    background: #590242;
+    border-radius: 5px;
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+    background: #020659;
+}
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 15px;
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #020659;
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background: #020659;
+    border-radius: 5px;
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
 }
