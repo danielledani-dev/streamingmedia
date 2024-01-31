@@ -65,6 +65,7 @@ h1 {
     text-transform: uppercase;
     display: grid;
     position: absolute;
+    font-weight: bold;
     padding-top: 1em;
     padding-left: 1.25em;
 }
@@ -90,7 +91,7 @@ label {
     padding: 28px 20px;
     position: relative;
     user-select: none;
-    z-index: 1;
+    z-index: 3;
     top: -12.5em;
 }
 label span {
@@ -134,7 +135,6 @@ input:checked ~ label span:after {
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
 }
-
 @media screen and (min-width:834px) {
     ul {
         overflow: visible;
@@ -147,24 +147,45 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         display: none;
     }
 }
+nav {
+    position: absolute;
+}
+.container {
+    position: relative;
+    display: flex;
+    padding: 3em 5em 0em 18.4em;
+    top: -16em;
+    background-color: #030A8C;
+}
 li:first-child {
-    display: grid;
+    position: absolute;
+    color: white;
+    display: flex; 
+    top: -11em;
+    left: 8em;
+}
+li:first-child a {
     color: white;
     position: absolute;
-    top: 1em;
-    padding-left: 135px;
-    padding-right: 106px;
-    padding-bottom: 12px;
-    margin-top: -15px;
-    padding-top: 15px;
-    background-color: #030A8C;
-    z-index: 0;
-}
-li:first-child a{
-    color: white;
     text-decoration: none;
     font-variant: small-caps;
+    font-weight: bold;
     font-size: 1.5em;
+}
+li:nth-child(n+2) a {
+    color: #590242;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+ul {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 1.5em;
+    margin-top: -6em;
+    padding: 0 5px;
 }
 h2 {
     position: relative;
@@ -172,8 +193,38 @@ h2 {
     font-size: 1em;
     text-transform: uppercase;
     font-weight: bold;
-    top: -0.75em;
-    left: 2em;
+    top: -.2em;
+    left: .9em;
+}
+#trending{
+    position: relative;
+    top:5em;
+}
+#trending h3{
+    color: #590242;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    padding-bottom: 0.5em;
+}
+#trending .artist {
+    color: #590242;
+    font-style: italic;
+}
+#trending p {
+    color: #590242;
+}
+audio::-webkit-media-controls-mute-button {
+    background-color: white;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-play-button {
+    background-color: white;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-enclosure {
+    background: rgba(255,255,255,.75)
 }
 .scroll {
     display: grid;
@@ -218,4 +269,9 @@ h2 {
 }
 #playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
     background: #ffffff;
+}
+audio {
+    position: relative;
+    top: -9em;
+    right: -.3em;
 }
