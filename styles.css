@@ -53,8 +53,10 @@ body {
     width: 375px;
     margin: 0 auto;
     background-color: #ffffff;
+    position: relative;
+    height: 1600px;
 }
-header, footer{
+header {
     width: 100%;
     background-color: #2104D9;
     color: white;
@@ -91,8 +93,6 @@ label {
     padding: 28px 20px;
     position: relative;
     user-select: none;
-    z-index: 3;
-    top: -12.5em;
 }
 label span {
     background-color: #ffffff;
@@ -135,70 +135,57 @@ input:checked ~ label span:after {
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
 }
-@media screen and (min-width:834px) {
-    ul {
-        overflow: visible;
-        position: absolute;
-        top: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-    label span, input {
-        display: none;
-    }
-}
 nav {
     position: absolute;
-}
-.container {
-    position: relative;
-    display: flex;
-    padding: 3em 5em 0em 18.4em;
-    top: -16em;
-    background-color: #030A8C;
-}
-li:first-child {
-    position: absolute;
-    color: white;
-    display: flex; 
-    top: -11em;
-    left: 8em;
-}
-li:first-child a {
-    color: white;
-    position: absolute;
-    text-decoration: none;
-    font-variant: small-caps;
-    font-weight: bold;
-    font-size: 1.5em;
-}
-li:nth-child(n+2) a {
-    color: #590242;
+    width: 375px;
+    top: 0;
     text-transform: uppercase;
+    background-color: #030A8C;
+    margin-top: -50px;
+}
+[href="#home"] {
+    position: absolute;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.75em;
+    padding: 40px 16px;
+    text-transform: capitalize;
+    top: -1em;
+    left: 95px;
+}
+li a {
+    display: block;
     text-decoration: none;
+    color: white;
 }
 ul {
     display: flex;
-    position: absolute;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    gap: 1.5em;
-    margin-top: -6em;
-    padding: 0 5px;
+    gap: 1em;
+    justify-content: flex-start;
+    margin-right: 11px;
 }
-h2 {
+li:nth-child(n+2) a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+}
+li:nth-child(n+2) a:hover {
+    color: #590242;
+}
+#trending h2 {
     position: relative;
     color: #590242;
     font-size: 1em;
     text-transform: uppercase;
     font-weight: bold;
-    top: -.2em;
+    top: -.7em;
     left: .9em;
 }
 #trending{
     position: relative;
-    top:5em;
+    top: 3em;
+    margin-bottom: 10em;
 }
 #trending h3{
     color: #590242;
@@ -212,8 +199,19 @@ h2 {
     color: #590242;
     font-style: italic;
 }
-#trending p {
-    color: #590242;
+.more-trending {
+    color: white;
+    background-color: #590242;
+    border-radius: 5px;
+    position: absolute;
+    bottom: -3em;
+    right: 13em;
+    font-size: 1em;
+    width: 150px;
+    height: 30px;
+}
+.more-trending:hover {
+    background-color:#020659;
 }
 audio::-webkit-media-controls-mute-button {
     background-color: white;
@@ -235,6 +233,7 @@ audio::-webkit-media-controls-enclosure {
 .scroll section {
     margin: 10px;
     position: relative;
+    margin-bottom: -1em;
 }
 .scroll div {
     position: absolute;
@@ -257,6 +256,47 @@ audio::-webkit-media-controls-enclosure {
 #trending ::-webkit-scrollbar-thumb:hover {
     background: #020659;
 }
+audio {
+    position: relative;
+    top: -9em;
+    right: -.3em;
+}
+#playlists h2 {
+    color: #590242;
+    font-size: 1em;
+    text-transform: uppercase;
+    position: absolute;
+    font-weight: bold;
+    bottom: 57em;
+    left: .9em;
+    white-space: nowrap;
+    height: 20px;
+}
+#playlists {
+    display: flex;
+    margin-top: 120px;
+    background-color: #0D8DFB;
+    height: 270px;
+}
+#playlists section {
+    margin: 12px;
+    background-color: #2699FB;
+    padding: 7px;
+}
+#playlists h3 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-bottom: 4px;
+    font-size: 1em;
+}
+#playlists p {
+    color: white;
+    text-align: center;
+    font-size: .9em;
+}
 #playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
     width: 15px;
 }
@@ -270,8 +310,192 @@ audio::-webkit-media-controls-enclosure {
 #playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
     background: #ffffff;
 }
-audio {
-    position: relative;
-    top: -9em;
-    right: -.3em;
+.all-playlists {
+    color: white;
+    background-color: #590242;
+    border-radius: 5px;
+    position: absolute;
+    top: 62em;
+    right: 13em;
+    font-size: 1em;
+    width: 150px;
+    height: 30px;
+}
+.all-playlists:hover {
+    background-color: #020659;
+}
+#curated {
+    display: flex;
+    margin-top: 120px;
+    background-color: #030A8C;
+    height: 270px;
+}
+#curated h2 {
+    color: #590242;
+    font-size: 1em;
+    text-transform: uppercase;
+    position: absolute;
+    font-weight: bold;
+    bottom: 33em;
+    left: .9em;
+    white-space: nowrap;
+    height: 20px;
+}
+#curated section {
+    margin: 12px;
+    background-color: #020873;
+    padding: 7px;
+}
+#curated h3 {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-bottom: 4px;
+    font-size: 1em;
+}
+#curated p {
+    color: white;
+    text-align: center;
+    font-size: .9em;
+}
+.more-curated {
+    color: white;
+    background-color: #590242;
+    border-radius: 5px;
+    position: absolute;
+    top: 86.5em;
+    right: 12.8em;
+    font-size: 1em;
+    width: 150px;
+    height: 30px;
+}
+.more-curated:hover {
+    background-color:#020659;
+}
+footer {
+    width: 100%;
+    display: flex;
+    margin: 80px 0;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: #590242;
+    font-size: .9em;
+    text-align: center;
+}
+@media screen and (min-width:834px) {
+    body {
+        width: 834px;
+        margin-bottom: 0;
+    }
+    nav {
+        width: 100%;
+    }
+    nav ul{
+        overflow: visible;
+        position: absolute;
+        top: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        left: 10em;
+        gap: 5em;
+        margin-right: 50px;
+    }
+    [href="#home"] {
+        top: -1.3em;
+        left: -154px;
+    }
+    label span, input {
+        display: none;
+    }
+    .more-trending {
+        right: 2em;
+    }
+    #playlists {
+        width: 50.5%;
+        height: 500px;
+        margin: 8em 0em;
+    }
+    #playlists div.scroll {
+        display: grid;
+        overflow-x: hidden;
+        overflow-y: visible;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #playlists p {
+        width: 40%;
+        position: relative;
+        display: grid;
+        margin-left: 13em;
+        align-items: center;
+        top: -7em;
+    }
+    #playlists h3 {
+        width: 40%;
+        position: relative;
+        display: grid;
+        top: -7em;
+        margin-left: 11.75em;
+        align-items: center;
+    }
+    #playlists section {
+        height: 150px;
+    }
+    #playlists img {
+        display: grid;
+        margin-top: 1em;
+        margin-left: .75em;
+    }
+    .all-playlists {
+        top: 77em;
+        right: 27em;
+    }
+    #curated h2 {
+        top: 41.9em;
+        left: 27em;
+    }
+    .more-curated {
+        top: 77em;
+        right: 2em;
+    }
+    #curated {
+        width: 49.7%;
+        height: 500px;
+        margin: -39.25em 26.3em;
+    }
+    #curated div.scroll {
+        display: grid;
+        overflow-x: hidden;
+        overflow-y: visible;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #curated p {
+        width: 40%;
+        position: relative;
+        display: grid;
+        margin-left: 13em;
+        align-items: center;
+        top: -7em;
+    }
+    #curated h3 {
+        width: 40%;
+        position: relative;
+        display: grid;
+        top: -7em;
+        margin-left: 11.75em;
+        align-items: center;
+    }
+    #curated section {
+        height: 150px;
+    }
+    #curated img {
+        display: grid;
+        margin-top: 1em;
+        margin-left: .75em;
+    }
+    footer {
+        margin: 750px 0;
+    }
 }
